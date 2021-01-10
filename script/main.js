@@ -118,7 +118,7 @@ const changeContent = (e) => {
   document.querySelector(".article").innerHTML = createContent(index);
 };
 
-const createContent = (index) => {
+const createContent = (index = 0) => {
   let content = `
       <div>
         <h2 class="title">${DATABASE[index].title}</h2>
@@ -149,7 +149,7 @@ const renderContent = () => {
   let navigation = document.createElement("nav");
   navigation.className = "navbar";
   article.className = "article";
-  article.innerHTML = createContent(0);
+  article.innerHTML = createContent();
   navigation.appendChild(createMenu());
   content.appendChild(navigation);
   content.appendChild(article);
